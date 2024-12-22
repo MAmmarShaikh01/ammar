@@ -56,6 +56,33 @@ const BlogDetail: React.FC<BlogDetailProps> = async (props) => {
     <CommentSection />
     </>
   );
+}
+
+  if (!blog) {
+    return <p style={{ textAlign: "center", padding: "2rem" }}>Blog not found.</p>;
+  }
+
+  return (
+    <>
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <h1> {blog.title}</h1>
+        <p className={styles.excerpt}>{blog.excerpt}</p>
+        <div className={styles.meta}>
+          <span>By {blog.author}</span>
+          <span>{blog.date}</span>
+        </div>
+      </div>
+      <div className={styles.imageWrapper}>
+        <Image src={blog.image} alt={blog.title} width={300} height={300} className={styles.image} />
+      </div>
+      <div className={styles.content}>
+        <p>{blog.content}</p>
+      </div>
+    </div>
+    <CommentSection />
+    </>
+  );
 };
 
 export default BlogDetail;
