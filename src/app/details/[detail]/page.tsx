@@ -2,7 +2,7 @@ import React from 'react';
 import blogData from '@/blogs/blogs';
 import styles from "../../../styles/BlogDetail.module.css";
 import CommentSection from '@/components/CommentSection';
-
+import Image from 'next/image';
 interface BlogDetailProps {
   params: {
     detail: string; // Assuming the 'detail' field is a string (it can be number if required)
@@ -32,7 +32,7 @@ const BlogDetail = async (props:BlogDetailProps) => {
         </div>
       </div>
       <div className={styles.imageWrapper}>
-        <img src={blog.image} alt={blog.title} className={styles.image} />
+        <Image src={blog.image} alt={blog.title} width={300} height={300} className={styles.image} />
       </div>
       <div className={styles.content}>
         <p>{blog.content}</p>
