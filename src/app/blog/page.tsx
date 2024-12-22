@@ -6,9 +6,9 @@ export default function Navbar() {
   return (
  <>
  <div style={{ padding: "2rem" }}>
-      <h1 style={{ textAlign: "center", fontSize: "2rem" , fontWeight: "bold", marginBottom: "0.5rem" , color: "#1d3557" }}>Latest Blog Posts</h1>
+      <h1 style={{ textAlign: "center", fontSize: "2rem" , fontWeight: "bold", marginBottom: "0.5rem" , color: "#1d3557" }}> Our All Blog Posts</h1>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem", justifyContent: "center" }}>
-        {blogData.slice(0, 3).map((blog) => (
+        {blogData.map((blog) => (
           <div
             key={blog.id}
             style={{
