@@ -9,12 +9,27 @@ interface BlogDetailProps {
   };
 }
 
-const BlogDetail = async (props:BlogDetailProps) => {
-  
-  console.log("Prints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar toPrints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar toPrints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar toPrints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar toPrints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar toPrints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar to")
+interface Blog {
+  id: string;
+  title: string;
+  excerpt: string;
+  author: string;
+  date: string;
+  image: string;
+  content: string;
+}
+
+interface BlogDetailProps {
+  params: {
+    detail: string;
+  };
+}
+
+const BlogDetail: React.FC<BlogDetailProps> = async (props) => {
+  console.log("Prints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar toPrints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar toPrints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar toPrints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar toPrints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar to")
   const amm = await props.params;
   const id = amm.detail;
-  const blog = blogData.find((b) => b.id === id);
+  const blog: Blog | undefined = blogData.find((b) => b.id === id);
 
   if (!blog) {
     return <p style={{ textAlign: "center", padding: "2rem" }}>Blog not found.</p>;
