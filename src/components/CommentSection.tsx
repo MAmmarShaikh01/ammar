@@ -31,7 +31,7 @@ function CommentSection() {
   };
 
   // Function to handle removing a comment
-  const removeComment = (id:any) => {
+  const removeComment = (id:number|string) => {
     setComments((prevComments) => prevComments.filter((comment) => comment.id !== id)); // Remove comment by id
   };
 
