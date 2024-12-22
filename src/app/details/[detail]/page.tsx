@@ -3,7 +3,13 @@ import blogData from '@/blogs/blogs';
 import styles from "../../../styles/BlogDetail.module.css";
 import CommentSection from '@/components/CommentSection';
 
-const BlogDetail = async (props:any) => {
+interface BlogDetailProps {
+  params: {
+    detail: string; // Assuming the 'detail' field is a string (it can be number if required)
+  };
+}
+
+const BlogDetail = async (props:BlogDetailProps) => {
   
   console.log("Prints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar toPrints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar toPrints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar toPrints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar toPrints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar toPrints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar to")
   const amm = await props.params;
