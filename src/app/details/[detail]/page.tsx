@@ -7,7 +7,7 @@ import Image from 'next/image';
 interface BlogDetailProps {
   params: {
     detail: string; // The dynamic route parameter
-    [key: string]: any;
+    [key: string]: unknown;
   };
 }
 
