@@ -3,11 +3,9 @@ import blogData from '@/blogs/blogs';
 import styles from "../../../styles/BlogDetail.module.css";
 import CommentSection from '@/components/CommentSection';
 
-const BlogDetail = async (props:any) => {
-  
-  console.log("Prints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar toPrints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar toPrints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar toPrints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar toPrints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar toPrints to stdout with newline. Multiple arguments can be passed, with the first used as the primary message and all additional used as substitution values similar to")
-  const amm = await props.params;
-  const id = amm.detail;
+const BlogDetail = async ({params}:{params:{detail:string}}) => {
+  const amm = await params
+  const id = amm["detail"];
   const blog = blogData.find((b) => b.id === id);
 
   if (!blog) {
